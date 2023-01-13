@@ -1,9 +1,7 @@
 <template>
   <div class="gr-btn-container-foreground" :style="cssVariables">
-    <div v-for="(button, index) in localOptions" :key="`grow-button-${index}`" :class="[
-      'gr-btn-container',
-      { 'gr-btn-container-active': button.selected },
-    ]" :to="button.path" @click="handleButtonClick(button, index)">
+    <div v-for="(button, index) in localOptions" :key="`grow-button-${index}`" :class="['gr-btn-container',
+    { 'gr-btn-container-active': button.selected },]" :to="button.path" @click="handleButtonClick(button, index)">
       <div :class="['gr-btn-item', { 'gr-btn-item-active': button.selected }]">
         <div :class="['gr-btn-icon', { 'gr-btn-icon-active': button.selected }]">
           <slot name="icon" :props="button">
@@ -17,9 +15,8 @@
             </slot>
           </span>
           <span :class="[
-            'gr-animated-title',
-            { 'gr-animated-title-active': button.selected },
-          ]">
+          'gr-animated-title',
+          { 'gr-animated-title-active': button.selected },]">
             <slot name="title" :props="button">
               {{ button.title }}
             </slot>
@@ -161,12 +158,12 @@ const index = localOptions.value.findIndex((item: GrowOption) => {
   return false;
 });
 
-if (index > -1) {
-  currSelected.value = index;
-  prevSelected.value = index;
+//if (index > -1) {
+currSelected.value = index;
+prevSelected.value = index;
 
-  localOptions.value[index].selected = true;
-}
+localOptions.value[index].selected = true;
+//}
 </script>
 
 <style scoped>

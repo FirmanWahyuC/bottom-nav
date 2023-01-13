@@ -78,7 +78,7 @@ const cssVariables = computed(() => {
 watch(
   () => props.modelValue,
   (newVal, oldVal) => {
-    if (newVal != oldVal && enableWatch.value) {
+    if (enableWatch.value) {
       const target = localOptions.value.findIndex(
         option => option.id == newVal
       );
@@ -115,7 +115,6 @@ function handleButtonClick(button: GrowOption, index: number) {
   // if (index === currSelected.value) {
   //   return;
   // }
-  console.log(index);
   currSelected.value = index;
 
   if (prevSelected.value !== null) {

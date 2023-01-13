@@ -115,7 +115,7 @@ function handleButtonClick(button: GrowOption, index: number) {
   // if (index === currSelected.value) {
   //   return;
   // }
-
+  console.log(index);
   currSelected.value = index;
 
   if (prevSelected.value !== null) {
